@@ -14,7 +14,12 @@ class FeedbackReportFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => 'testing',
+            'content' => $this->faker->sentence(30),
+            'map' => 'testing',
+            'type' => 'other',
+            'gameseconds' => rand(0, 100),
+            'bundleid' => $this->faker->sentence(1)
         ];
     }
 }

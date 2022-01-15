@@ -24,7 +24,12 @@ class StoreFeedbackReportRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'content' => 'required',
+            'gameseconds' => 'required',
+            'type' => 'required',
+            'bundleid' => 'required',
+            'map' => 'required'
         ];
     }
 }

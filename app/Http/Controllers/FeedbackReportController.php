@@ -36,7 +36,8 @@ class FeedbackReportController extends Controller
      */
     public function store(StoreFeedbackReportRequest $request)
     {
-        FeedbackReport::create($request->all());
+        $report = FeedbackReport::create($request->all());
+        return response()->json($report, 201);
     }
 
     /**

@@ -15,6 +15,14 @@ class CreateFeedbackReportsTable extends Migration
     {
         Schema::create('feedback_reports', function (Blueprint $table) {
             $table->id();
+
+            $table->string('title');
+            $table->text('content');
+            $table->string('map');
+            $table->string('type');
+            $table->float('gameseconds');
+            $table->string('bundleid');
+
             $table->timestamps();
         });
     }
