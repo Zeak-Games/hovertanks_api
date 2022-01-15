@@ -15,7 +15,7 @@ class FeedbackReportController extends Controller
      */
     public function index()
     {
-        //
+        return FeedbackReport::latest()->paginate();
     }
 
     /**
@@ -36,7 +36,7 @@ class FeedbackReportController extends Controller
      */
     public function store(StoreFeedbackReportRequest $request)
     {
-        //
+        FeedbackReport::create($request->all());
     }
 
     /**
@@ -47,7 +47,7 @@ class FeedbackReportController extends Controller
      */
     public function show(FeedbackReport $feedbackReport)
     {
-        //
+        return $feedbackReport;
     }
 
     /**
