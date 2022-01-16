@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFeedbackReportRequest;
 use App\Models\FeedbackReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FeedbackReportAdmin extends Controller
 {
@@ -45,7 +46,12 @@ class FeedbackReportAdmin extends Controller
     public function store(StoreFeedbackReportRequest $request)
     {
         $report = FeedbackReport::create($request->all());
-        return redirect('reports-postcreate');
+        if(Auth::check()){
+            return redirect('/reports')->with('status', 'Created successfully');
+        } else {
+            return redirect('reports-postcreate');
+        }
+
     }
 
     /**
