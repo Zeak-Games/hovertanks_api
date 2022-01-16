@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFeedbackReportRequest;
 use App\Models\FeedbackReport;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,11 @@ class FeedbackReportAdmin extends Controller
      */
     public function create()
     {
-        //
+        return view('reports.create');
+    }
+
+    public function postcreate(){
+        return view('reports.postcreate');
     }
 
     /**
@@ -37,9 +42,10 @@ class FeedbackReportAdmin extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFeedbackReportRequest $request)
     {
-        //
+        $report = FeedbackReport::create($request->all());
+        return redirect('reports.postcreate');
     }
 
     /**
