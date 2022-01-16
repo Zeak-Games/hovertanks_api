@@ -9,6 +9,10 @@
 
                 <div class="card-body">
 
+                    <div class="d-flex justify-content-center">
+                        {{ $reports->links() }}
+                    </div>
+
                     <table class="table">
                         <thead>
                             <tr>
@@ -31,9 +35,15 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $reports->links() }}
+
+                    <div class="d-flex justify-content-center">
+                        {{ $reports->links() }}
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>
