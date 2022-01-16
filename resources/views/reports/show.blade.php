@@ -16,6 +16,14 @@
                     <p class="card-text">Game seconds: {{$report->gameseconds}}  </p>
                     <p class="card-text">Bundle Id: {{$report->bundleid}}  </p>
                     <p class="card-text">Created at: {{$report->created_at}}  </p>
+
+                    <form action="{{ route('report.destroy', $report) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete report" class="btn btn-sm btn-danger"
+                            onclick="return confirm('Are you sure to delete this report?')"
+                        >
+                    </form>
                 </div>
             </div>
         </div>

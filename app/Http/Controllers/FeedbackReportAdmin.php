@@ -87,6 +87,7 @@ class FeedbackReportAdmin extends Controller
      */
     public function destroy(FeedbackReport $feedbackReport)
     {
-        //
+        $feedbackReport->delete();
+        return redirect('/reports')->with('status', 'Deleted successfully');
     }
 }

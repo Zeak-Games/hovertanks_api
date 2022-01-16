@@ -7,6 +7,12 @@
             <div class="card">
                 <div class="card-header">{{ __('Feedback Reports') }}</div>
 
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
                 <div class="card-body">
 
                     <div class="d-flex justify-content-center">

@@ -29,4 +29,7 @@ Route::get('/reports', [FeedbackReportAdmin::class, 'index'])
 Route::get('/reports/{feedbackReport}', [FeedbackReportAdmin::class, 'show'])
     ->middleware('auth')
     ->name('report.show');
+Route::delete('/reports/{feedbackReport}', [FeedbackReportAdmin::class, 'destroy'])
+    ->middleware('auth')
+    ->name('report.destroy');
 
