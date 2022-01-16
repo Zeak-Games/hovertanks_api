@@ -8,6 +8,11 @@ use App\Models\FeedbackReport;
 
 class FeedbackReportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
