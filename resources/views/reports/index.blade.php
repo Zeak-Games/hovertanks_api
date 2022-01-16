@@ -13,6 +13,8 @@
                     </div>
                 @endif
 
+                <a class="btn btn-sm btn-primary" href="{{ route('report.create') }}">Create report</a>
+
                 <div class="card-body">
 
                     <div class="d-flex justify-content-center">

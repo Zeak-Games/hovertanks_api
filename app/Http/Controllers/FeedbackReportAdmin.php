@@ -45,7 +45,7 @@ class FeedbackReportAdmin extends Controller
     public function store(StoreFeedbackReportRequest $request)
     {
         $report = FeedbackReport::create($request->all());
-        return redirect('reports.postcreate');
+        return redirect('reports-postcreate');
     }
 
     /**
