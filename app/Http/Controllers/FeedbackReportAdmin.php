@@ -50,7 +50,10 @@ class FeedbackReportAdmin extends Controller
      */
     public function show(FeedbackReport $feedbackReport)
     {
-        return view('reports.show', compact('feedbackReport'));
+
+        return view('reports.show', [
+            'report' => $feedbackReport
+        ]);
     }
 
     /**

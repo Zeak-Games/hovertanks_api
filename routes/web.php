@@ -23,6 +23,10 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/reports', FeedbackReportAdmin::class)
+Route::get('/reports', [FeedbackReportAdmin::class, 'index'])
     ->middleware('auth')
-    ->only(['index', 'show']);
+    ->name('report.index');
+Route::get('/reports/{feedbackReport}', [FeedbackReportAdmin::class, 'show'])
+    ->middleware('auth')
+    ->name('report.show');
+

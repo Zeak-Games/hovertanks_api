@@ -24,7 +24,7 @@
                             <tr>
                                 <td>{{ $report->id }}</td>
                                 <td>{{ $report->type }}</td>
-                                <td><a href="{{ route('reports.show', $report) }}">{{ $report->title }}</a></td>
+                                <td><a href="{{ route('report.show', $report) }}">{{ $report->title }}</a></td>
                                 <td>{{ $report->content }}</td>
                                 <td>{{ $report->map }}</td>
                             </tr>
