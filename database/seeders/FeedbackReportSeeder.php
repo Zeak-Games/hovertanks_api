@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\FeedbackReport;
 use Illuminate\Database\Seeder;
 
 class FeedbackReportSeeder extends Seeder
@@ -13,6 +14,6 @@ class FeedbackReportSeeder extends Seeder
      */
     public function run()
     {
-        //
+        FeedbackReport::factory(10)->create();
     }
 }
