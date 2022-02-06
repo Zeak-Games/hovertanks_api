@@ -14,7 +14,8 @@ class GameVersionController extends Controller
      */
     public function index()
     {
-        //
+        $versions = GameVersion::latest()->paginate();
+        return $versions;
     }
 
     /**
@@ -25,7 +26,8 @@ class GameVersionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newVersion = GameVersion::create($request->all());
+        return response()->json($newVersion, 201);
     }
 
     /**
@@ -36,7 +38,7 @@ class GameVersionController extends Controller
      */
     public function show(GameVersion $gameVersion)
     {
-        //
+        return $gameVersion;
     }
 
     /**
@@ -48,7 +50,8 @@ class GameVersionController extends Controller
      */
     public function update(Request $request, GameVersion $gameVersion)
     {
-        //
+        $gameVersion->update($request->all());
+        return $gameVersion;
     }
 
     /**
@@ -59,6 +62,7 @@ class GameVersionController extends Controller
      */
     public function destroy(GameVersion $gameVersion)
     {
-        //
+        $gameVersion->delete();
+        return response()->json(null, 204);
     }
 }
