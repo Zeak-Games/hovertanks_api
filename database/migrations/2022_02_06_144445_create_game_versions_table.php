@@ -15,6 +15,16 @@ class CreateGameVersionsTable extends Migration
     {
         Schema::create('game_versions', function (Blueprint $table) {
             $table->id();
+
+            $table->string('version_name');
+            $table->string('version_id');
+            $table->text('url_installer');
+            $table->text('url_pak');
+            $table->boolean('require_reinstall');
+
+            $table->string('title')->nullable();
+            $table->text('notes')->nullable();
+
             $table->timestamps();
         });
     }
