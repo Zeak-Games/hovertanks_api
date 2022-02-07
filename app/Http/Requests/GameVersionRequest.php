@@ -27,7 +27,8 @@ class GameVersionRequest extends FormRequest
             'version_name' => 'required',
             'version_id' => 'required',
             'url_installer' => 'required',
-            'url_pak' => 'require_reinstall'
+            'url_pak' => 'required',
+            'require_reinstall' => 'required'
         ];
     }
 }
