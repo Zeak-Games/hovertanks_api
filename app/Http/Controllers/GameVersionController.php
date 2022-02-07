@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GameVersionRequest;
 use App\Models\GameVersion;
 use Illuminate\Http\Request;
 
@@ -27,10 +28,10 @@ class GameVersionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\GameVersionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GameVersionRequest $request)
     {
         $newVersion = GameVersion::create($request->all());
         return response()->json($newVersion, 201);
@@ -50,11 +51,11 @@ class GameVersionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\GameVersionRequest  $request
      * @param  \App\Models\GameVersion  $gameVersion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GameVersion $gameVersion)
+    public function update(GameVersionRequest $request, GameVersion $gameVersion)
     {
         $gameVersion->update($request->all());
         return $gameVersion;
