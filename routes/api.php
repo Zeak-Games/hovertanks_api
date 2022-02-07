@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('feedbackReports', FeedbackReportController::class);
 Route::apiResource('gameVersions', GameVersionController::class)
-    ->only(['index', 'show']);
+    ->only(['index', 'show', 'store']);
